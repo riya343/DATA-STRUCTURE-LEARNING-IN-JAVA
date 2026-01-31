@@ -1,4 +1,4 @@
- ------------------------------------PRINT DECREASING---------------------------------
+ ------------------------------------  PRINT DECREASING ---------------------------------
 in this question , we need to print given imput in decreasing order.
   // here code for this 
 
@@ -18,7 +18,7 @@ public class Main {
     }
 }
 
-------------------------------------PRINT INCREASIING------------------------------------
+------------------------------------ PRINT INCREASIING ------------------------------------
   in this question , we need to print given imput in increasing order.
   // here code for this 
 
@@ -38,7 +38,7 @@ public class Main {
     }
 }
 
--------------------------------PRINT DECREASING INCREASING----------------------------------------
+------------------------------- PRINT DECREASING INCREASING ----------------------------------------
  in this question , we need to print given imput in decreasing and increasing order at same time.
   // here code for this 
 
@@ -65,6 +65,95 @@ public static void  PrintDecreasingIncreasing(int n){
 // ->  Print before recursion → decreasing
 // ->  Print after recursion → increasing
 // ->  Both side print → increasing + decreasing
+
+------------------------------------- FACTORIAL ---------------------------------------
+in this we need to print the factorial of the given input. 
+// Here the code for the question 
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner scn = new Scanner(System.in);
+       int n = scn.nextInt();
+      int result =  factorial(n);
+        System.out.println(result);
+    }
+    public static int factorial(int n){
+        if ( n == 0 || n == 1){
+            return 1;
+        }
+        int fact1 = factorial(n-1);
+        int fact = fact1 * n;
+        return fact;
+    }
+}
+
+---------------------------------------- PRINT POWER ----------------------------------------------
+in this we are solving the number and its power value like 2 pow 4.
+// here the code 
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner scn = new Scanner(System.in);
+       int x = scn.nextInt();
+       int n = scn.nextInt();
+      int result =  power(x , n );
+        System.out.println(result);
+    }
+    public static int power(int x, int n){
+        if ( n == 0){
+            return 1;
+        }
+        int xnm1 = power(x,n-1);
+        int xn = x * xnm1;
+        return xn;
+    }
+}
+
+// TYPE 2 OF SOLVING POWER QUESTION BY DIFFERENT LOGIC OF LOG WHICH GIVES DIFFRENT OUTPUT 
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner scn = new Scanner(System.in);
+       int x = scn.nextInt();
+       int n = scn.nextInt();
+      int result =  power(x , n );
+        System.out.println(result);
+    }
+    public static int power(int x, int n){
+        if ( n == 0){
+            return 1;
+        }
+        int xbn2 = power(x,n/2);
+        int xn = xbn2 * xbn2;
+    if (n%2!=0){
+        xn= xn*x;
+    }
+        return xn;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
