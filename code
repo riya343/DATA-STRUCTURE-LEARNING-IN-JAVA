@@ -1,0 +1,77 @@
+ ------------------------------------PRINT DECREASING---------------------------------
+in this question , we need to print given imput in decreasing order.
+  // here code for this 
+
+  import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        PrintDecreasing(n);
+    }
+    public static void PrintDecreasing(int n) {
+        if (n == 0) {
+            return;
+        }
+        System.out.println(n);
+        PrintDecreasing(n - 1);
+    }
+}
+
+------------------------------------PRINT INCREASIING------------------------------------
+  in this question , we need to print given imput in increasing order.
+  // here code for this 
+
+  import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        PrintDecreasing(n);
+    }
+    public static void PrintDecreasing(int n) {
+        if (n == 0) {
+            return;
+        }
+        PrintDecreasing(n - 1);
+        System.out.println(n);
+    }
+}
+
+-------------------------------PRINT DECREASING INCREASING----------------------------------------
+ in this question , we need to print given imput in decreasing and increasing order at same time.
+  // here code for this 
+
+  import java.util.Scanner;
+
+public class main{
+public static void main (String [] args){
+
+    Scanner scn = new Scanner (System.in);
+    int n = scn.nextInt();
+    PrintDecreasingIncreasing(n);
+}
+public static void  PrintDecreasingIncreasing(int n){
+    if (n == 0){
+        return;
+    }
+    System.out.println(n);
+    PrintDecreasingIncreasing(n-1);
+    System.out.println(n);
+}
+}
+
+//  TRICK TO REMEMBER
+// ->  Print before recursion → decreasing
+// ->  Print after recursion → increasing
+// ->  Both side print → increasing + decreasing
+
+
+
+
+
+
+
+
+
+
