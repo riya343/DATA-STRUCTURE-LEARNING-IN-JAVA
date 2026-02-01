@@ -112,7 +112,7 @@ public class Main {
     }
 }
 
-// TYPE 2 OF SOLVING POWER QUESTION BY DIFFERENT LOGIC OF LOG WHICH GIVES DIFFRENT OUTPUT 
+// TYPE 2 OF SOLVING POWER QUESTION BY DIFFERENT LOGIC OF LOG(n) COMPLEXCITY
 
 import java.util.Scanner;
 public class Main {
@@ -136,10 +136,195 @@ public class Main {
     }
 }
 
+-------------------------------- TOWER OF HANOI -------------------------------------------
+You are given n disks placed on a source rod.
+Your task is to move all the disks to the destination rod using a helper rod, following these rules:
+1. Only one disk can be moved at a time.
+2. A larger disk cannot be placed on top of a smaller disk.
+You must determine the sequence of moves required to transfer all the disks from the source rod to the destination rod.
+// here the code 
+import java.util.Scanner;
 
+class Main {
+    public static void main(String[] args) {
+       Scanner scn = new Scanner (System.in);
+       int n = scn.nextInt();
+        towerofHanoi(n,'A','B','C');
+     
+    }
+    public static void towerofHanoi(int n,char src,char helper,char dest){
+        if(n == 0){
+            return;
+        }
+        towerofHanoi(n-1,src,dest,helper);
+        System.out.println("move desk" + n + "from" + src +  "to" + dest);
+        towerofHanoi(n-1,helper,src,dest);
+    }
+}
 
+------------------------------------------  DISPLAY AND REVERSE OF AN ARRAY -------------------------------------
+Dispaly and reverse of an array
+// here the code
 
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[]arr = new int[n];
+    
+        for (int i = 0; i < arr.length; i++ ){
+            arr[i] = scn.nextInt();
+        }
+        Displayarray(arr , 0);
+        System.out.println();
+
+        Reverseofarray(arr,0);
+    }
+    public static void Displayarray(int[] arr, int idx){
+        if (idx == arr.length){
+            return;
+        }
+        System.out.println( arr[idx] + " ");
+        Displayarray( arr, idx+1);
+    }
+    public static void Reverseofarray( int[]arr, int idx){
+        if (idx == arr.length){
+            return;
+        }
+        Reverseofarray(arr, idx+1);
+        System.out.println(arr[idx] + " ");
+    }
+}
+
+---------------------------------------------- MAXIMUM ARRAY ------------------------------------------
+print of maximum number from the array
+// here the code
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[]arr = new int[n];
+
+        for (int i = 0 ; i < arr.length ; i++){
+            arr[i]= scn.nextInt();
+        }
+        int max = maxofarray(arr, 0);
+        System.out.println(max);
+
+        }
+        public static int maxofarray( int[]arr, int idx){
+         if ( idx == arr.length - 1){
+              return  arr[idx];
+         }
+        int misa = maxofarray( arr,  idx+1);
+        if (misa > arr[idx]){
+            return misa;
+        } else {
+            return arr[idx];
+        }
+         }
+    }
+
+----------------------------------------- FIRST OCCURANCE --------------------------------------
+we need to print the first occurance of an element in an given array
+// here's the code
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[]arr = new int[n];
+        
+        for (int i = 0 ; i < arr.length ; i++){
+            arr[i]= scn.nextInt();
+        }
+         int d = scn.nextInt();
+
+       int ans =  Firstoccurance( arr, 0, d);
+       System.out.println(ans);
+     }
+    public static int Firstoccurance( int[] arr, int idx , int d){
+        if ( idx == arr.length){
+            return -1;
+        }
+        if ( arr[idx] == d){ 
+            return idx;
+        }
+        return Firstoccurance( arr, idx+1,d);
+    }        
+   }
+----------------------------------------- LAST OCCURANCE -------------------------------------
+we need to print the last occurance of an element in an given array
+// here's the code
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[]arr = new int[n];
+        
+        for (int i = 0 ; i < arr.length ; i++){
+            arr[i]= scn.nextInt();
+        }
+         int d = scn.nextInt();
+
+       int ans =  lastoccurance( arr, 0, d);
+       System.out.println(ans);
+     }
+    public static int lastoccurance( int[] arr, int idx , int d){
+        if ( idx == arr.length){
+            return -1;
+        }
+         int lisa = lastoccurance(arr, idx + 1, d);
+
+        if ( lisa != -1){
+            return lisa;
+
+        }
+        if ( arr[idx] == d){ 
+            return idx;
+        }
+        return -1;
+    }        
+  }
+--------------------------------------- ALL INDICES ----------------------------------------
+we need to print the all indexes  in an given array
+// here's the code
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[]arr = new int[n];
+        
+        for (int i = 0 ; i < arr.length ; i++){
+            arr[i]= scn.nextInt();
+        }
+         int d = scn.nextInt();
+
+      allindices( arr, 0, d);
+     }
+    public static void allindices( int[] arr, int idx , int d){
+        if ( idx == arr.length){
+            return ;
+        }
+        if ( arr[idx] == d){ 
+            System.out.println(idx);
+        }
+         allindices( arr, idx+1, d);
+    }        
+}
 
 
 
