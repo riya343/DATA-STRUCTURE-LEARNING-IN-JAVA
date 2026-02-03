@@ -368,7 +368,77 @@ public class Main {
     }
 }
 
+---------------------------------- MAZE PATH WITH JUMPS --------------------------------
 
+In this question, we need to print all possible paths from source to destination in a maze.
+We are allowed to move in three directions:
+Horizontal (h)
+Vertical (v)
+Diagonal (d)
+
+Also, we can take jumps of variable length in any direction.
+The task is to return all possible paths in the form of strings using recursion.
+
+// here is the code for this problem
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+        Scanner scn = new Scanner(System.in);
+
+        int dr = scn.nextInt();     // destination row
+        int dc = scn.nextInt();     // destination column
+
+        ArrayList<String> paths = getMazePaths(0, 0, dr - 1, dc - 1);
+
+        System.out.println(paths);
+    }
+
+    public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
+
+        // base case: when source reaches destination
+        if (sr == dr && sc == dc) {
+            ArrayList<String> bres = new ArrayList<>();
+            bres.add("");
+            return bres;
+        }
+
+        ArrayList<String> paths = new ArrayList<>();
+
+        // horizontal moves
+        for (int jump = 1; sc + jump <= dc; jump++) {
+            ArrayList<String> hpaths = getMazePaths(sr, sc + jump, dr, dc);
+
+            for (String path : hpaths) {
+                paths.add("h" + jump + path);
+            }
+        }
+
+        // vertical moves
+        for (int jump = 1; sr + jump <= dr; jump++) {
+            ArrayList<String> vpaths = getMazePaths(sr + jump, sc, dr, dc);
+
+            for (String path : vpaths) {
+                paths.add("v" + jump + path);
+            }
+        }
+
+        // diagonal moves
+        for (int jump = 1; sr + jump <= dr && sc + jump <= dc; jump++) {
+            ArrayList<String> dpaths = getMazePaths(sr + jump, sc + jump, dr, dc);
+
+            for (String path : dpaths) {
+                paths.add("d" + jump + path);
+            }
+        }
+
+        return paths;
+    }
+}
 
 
 
