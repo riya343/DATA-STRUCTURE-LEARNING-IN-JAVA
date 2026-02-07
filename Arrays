@@ -1,3 +1,23 @@
-introduction to arrays 
- day 1 
-explored of arrays and a small code of array of Dispaly.
+----------------------------------INTRODUCTION TO ARRAY---------------------------------
+Array is a collection of similar type of data stored in a continuous memory.
+ Example : int a,b,c,d,e;
+      In code we write : int arr[] = new int[5];
+
+>> DECLARATION
+   int[] arr = new int[5];
+
+>> INTTIALIZATION
+   int[] arr = [ 10,20,30,40};
+
+>> HOW TO TAKE INPUT
+   for (int i=0; i<n, i++){
+     arr[i] = sc.nextInt();}
+
+>> for( int i=0;arr.length;i++ ){
+    System.out.println( arr[i] + " ");  // for space ( + " ");
+
+
+
+
+
+   
