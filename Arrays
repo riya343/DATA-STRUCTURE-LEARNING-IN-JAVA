@@ -23,10 +23,42 @@ Array is a collection of similar type of data stored in a continuous memory.
   then in main write condtion if true return n
   else return -1 
   and remeber to write -1 after loop.
-- Finding index of target element  
+- Finding index of target element 
+  just made two thing target and index 
+intialize target with the target no. and index with 0
+then use loop and get ans  
 - Understanding return -1 logic  
 - Importance of loop structure  
 
+🟢 DAY 3 
+Arrays in Java are Reference Types
+Array variable stores address, not actual data.
+Arrays are Passed by Reference
+When array is sent to a function, original array is passed.
+Changes in Function Affect Original Array
+Modification inside method = modification in main array.
+Assignment Does NOT Create Copy
+Java
+Copy code
+int[] b = a;
+a and b point to same array.
+Need for Real Copy
+Direct assignment is NOT independent copy.
+Correct Ways to Copy Array
+Manual loop copy
+clone() method
+Java
+Copy code
+int[] b = a.clone();
+Returning Array from Function is Allowed
+Functions can return whole array.
+Side Effect Concept
+Passing array can unintentionally modify original data.
+Primitive vs Array Difference
+Primitive → pass by value
+Array → pass by reference
+Key Takeaway
+Always be careful when modifying arrays inside functions.
 
 
 
