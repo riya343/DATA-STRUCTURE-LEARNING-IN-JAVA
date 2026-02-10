@@ -60,6 +60,8 @@ Array → pass by reference
 Key Takeaway
 Always be careful when modifying arrays inside functions.
 
+understanding of code by following some rules
+
 
 
 
