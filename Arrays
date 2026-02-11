@@ -62,7 +62,48 @@ Always be careful when modifying arrays inside functions.
 
 understanding of code by following some rules
 
+ DAY 4 – PREFIX SUM CONCEPT
+Ab DAY 4 completely LOGIC BASED tha.
+1️⃣ Prefix Sum Kya Hota Hai?
+Prefix Sum =
+Array ke har index tak ka cumulative sum
+Example
+Array:
+Copy code
 
+[2, 4, 6, 8]
+Prefix Sum array:
+Copy code
+
+[2, 6, 12, 20]
+Kaise bana?
+2
+2+4 = 6
+2+4+6 = 12
+2+4+6+8 = 20
+2️⃣ Why Prefix Sum is Important?
+Bina prefix sum ke:
+Agar tumhe bar-bar range sum nikalna ho:
+Copy code
+
+index 2 se 5 tak ka sum?
+Har baar loop chalana padega → Slow
+Prefix Sum use karke:
+Sum from L to R:
+Copy code
+
+prefix[R] - prefix[L-1]
+👉 O(1) time me answer mil jata hai
+3️⃣ Code – Prefix Sum Banana
+Java
+Copy code
+int[] prefix = new int[arr.length];
+
+prefix[0] = arr[0];
+
+for(int i=1; i<arr.length; i++){
+    prefix[i] = prefix[i-1] + arr[i];
+}
 
 
    
