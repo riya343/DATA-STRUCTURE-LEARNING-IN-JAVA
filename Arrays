@@ -30,13 +30,16 @@ then use loop and get ans
 - Understanding return -1 logic  
 - Importance of loop structure  
 
-🟢 DAY 3 
+DAY 3 
 Arrays in Java are Reference Types
 Array variable stores address, not actual data.
+
 Arrays are Passed by Reference
 When array is sent to a function, original array is passed.
+
 Changes in Function Affect Original Array
 Modification inside method = modification in main array.
+
 Assignment Does NOT Create Copy
 Java
 Copy code
@@ -106,4 +109,5 @@ for(int i=1; i<arr.length; i++){
 }
 
 
-   practice of prevs days by learning revising old concepts
+   practice of prevs days by learning revising old concepts.
+
