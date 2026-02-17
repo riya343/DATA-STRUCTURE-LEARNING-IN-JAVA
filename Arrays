@@ -96,8 +96,8 @@ Sum from L to R:
 Copy code
 
 prefix[R] - prefix[L-1]
-👉 O(1) time me answer mil jata hai
-3️⃣ Code – Prefix Sum Banana
+O(1) time me answer mil jata hai
+ Code – Prefix Sum Banana
 Java
 Copy code
 int[] prefix = new int[arr.length];
